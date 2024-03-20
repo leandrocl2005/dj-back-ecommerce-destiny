@@ -50,9 +50,12 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+
+    password = serializers.CharField(write_only=True, required=False)
+
     class Meta:
         model = User
-        fields = "__all__"
+        fields = ["id", "email", "full_name", "password", "phone", "otp"]
 
 
 class ProfileSerializer(serializers.ModelSerializer):

@@ -41,13 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # my apps
     "userauths",
-    "store",
-    "vendor",
-    "customer",
     "api",
     # third party apps
     "rest_framework",
     "rest_framework_simplejwt.token_blacklist",
+    "drf_yasg",
 ]
 
 MIDDLEWARE = [
@@ -141,6 +139,10 @@ AUTH_USER_MODEL = "userauths.User"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+FROM_EMAIL = " desphixs@gmail.com"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+DEFAULT_FROM_EMAIL = " desphixs@gmail.com"
+SERVER_EMAIL = " desphixs@gmail.com"
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
